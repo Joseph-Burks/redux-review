@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Segment, Form, Input, Button } from 'semantic-ui-react';
 
-function App() {
+const App = props => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+		<Segment
+			style={{
+				marginTop: '10vh',
+				marginLeft: '5vw',
+				marginRight: '5vw',
+				textAlign: 'center',
+			}}
+		>
+			<h1>Log In</h1>
+			<Form>
+				<Form.Field>
+					<Input
+						label='Username'
+						placeholder='Username'
+					/>
+				</Form.Field>
+				<Form.Field>
+					<Input
+						label='Password'
+						type='password'
+						placeholder='P@$$w0rd'
+					/>
+				</Form.Field>
+				<Button primary>
+					Log In
+				</Button>
+			</Form>
+		</Segment>
+	);
 }
 
 export default App;
