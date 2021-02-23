@@ -12,23 +12,23 @@ const App = props => {
 				textAlign: 'center',
 			}}
 		>
-			<h1>Log In</h1>
+			<h1>Redux Review</h1>
 			<Form>
 				<Form.Field>
 					<Input
-						label='Username'
-						placeholder='Username'
+						label='Text Input'
+						placeholder='Text Placeholder'
 					/>
 				</Form.Field>
 				<Form.Field>
 					<Input
-						label='Password'
+						label='Password Input'
 						type='password'
-						placeholder='P@$$w0rd'
+						placeholder='**********'
 					/>
 				</Form.Field>
 				<Button primary>
-					Log In
+					console.log(state)
 				</Button>
 			</Form>
 		</Segment>
