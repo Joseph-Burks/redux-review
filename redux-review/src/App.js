@@ -18,6 +18,7 @@ const App = props => {
 					<Input
 						label='Text Input'
 						placeholder='Text Placeholder'
+						onChange={e => console.log(e.target.value)}
 					/>
 				</Form.Field>
 				<Form.Field>
@@ -25,10 +26,11 @@ const App = props => {
 						label='Password Input'
 						type='password'
 						placeholder='**********'
+						onChange={e => console.log(e.target.value)}
 					/>
 				</Form.Field>
-				<Button primary>
-					console.log(state)
+				<Button primary onClick={() => console.log('clicked')}>
+					console.log( variables )
 				</Button>
 			</Form>
 		</Segment>
