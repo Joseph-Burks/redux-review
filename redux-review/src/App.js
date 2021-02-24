@@ -1,8 +1,13 @@
 import React from 'react';
+import {useSelector, useDispatch} from 'react-redux'
 import './App.css';
 import { Segment, Form, Input, Button } from 'semantic-ui-react';
 
 const App = props => {
+  const dispatch = useDispatch()
+  const textInput = useSelector(state => state.textInput)
+  const passwordInput = useSelector(state => state.passwordInput)
+
   return (
 		<Segment
 			style={{
@@ -18,7 +23,10 @@ const App = props => {
 					<Input
 						label='Text Input'
 						placeholder='Text Placeholder'
-						onChange={e => console.log(e.target.value)}
+						onChange={e => dispatch({
+              type: 'CHANGE_TEXT_INPUT',
+              value: e.target.value
+            })}
 					/>
 				</Form.Field>
 				<Form.Field>
@@ -26,10 +34,13 @@ const App = props => {
 						label='Password Input'
 						type='password'
 						placeholder='**********'
-						onChange={e => console.log(e.target.value)}
+						onChange={e => dispatch({
+              type: 'CHANGE_PASSWORD_INPUT',
+              password: e.target.value
+            })}
 					/>
 				</Form.Field>
-				<Button primary onClick={() => console.log('clicked')}>
+				<Button primary onClick={() => console.log(textInput, passwordInput)}>
 					console.log( variables )
 				</Button>
 			</Form>
